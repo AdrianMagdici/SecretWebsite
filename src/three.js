@@ -11,7 +11,7 @@ const sizes = {
     height: window.innerHeight
 }
 const scene = new THREE.Scene();
-const camera = new PerspectiveCamera('75, sizes.width, sizes.height, ');
+const camera = new PerspectiveCamera(75, sizes.width, sizes.height);
 camera.position.z = 2;
 scene.add(camera);
 
@@ -37,8 +37,8 @@ gltfLoader.load(
 const cursor = {x:0, y:0}
 
 window.addEventListener('mousemove',(event) => {
-    cursorX = event.clientX/sizes.width - 0.5
-    cursorY = -(event.clientY/sizes.height - 0.5)
+    cursor.x = event.clientX/sizes.width - 0.5
+    cursor.y = -(event.clientY/sizes.height - 0.5)
 })
 
 const renderer = new THREE.WebGLRenderer({canvas: canvas})
